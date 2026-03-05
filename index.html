@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gideon Marshal Sunday | Creative Design Agency</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-weight:800;
+font-size:22px;
+color:#0d6efd;
+letter-spacing:1px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+transition:0.3s;
+font-weight:500;
+}
+
+nav a:hover{
+color:#0d6efd;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 10%;
+}
+
+.hero h1{
+font-size:48px;
+font-weight:800;
+}
+
+.typing{
+color:#0d6efd;
+font-size:26px;
+margin-top:15px;
+height:40px;
+}
+
+.hero p{
+margin-top:20px;
+max-width:700px;
+opacity:0.8;
+}
+
+.btn{
+margin-top:30px;
+padding:15px 40px;
+background:#0d6efd;
+border:none;
+border-radius:40px;
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+background:white;
+color:black;
+}
+
+.section{
+padding:100px 8%;
+text-align:center;
+}
+
+.section h2{
+font-size:38px;
+margin-bottom:50px;
+color:#0d6efd;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.testimonial{
+background:#111;
+padding:30px;
+border-radius:15px;
+border:1px solid #0d6efd;
+}
+
+.testimonial p{
+opacity:0.8;
+margin-bottom:15px;
+}
+
+footer{
+background:#111;
+padding:40px;
+text-align:center;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">GIDEON MS</div>
+<nav>
+<a href="#about">About</a>
+<a href="#gallery">Projects</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Premium Graphic & Print Solutions</h1>
+<div class="typing" id="typing"></div>
+<p>Helping brands in Nigeria stand out through high-impact visual design and professional printing services.</p>
+<a href="https://wa.me/2348089649108" target="_blank" class="btn">
+Start a Project
+</a>
+</section>
+
+<section class="section" id="about">
+<h2>About The Designer</h2>
+<p>I’m Gideon Marshal Sunday, a professional graphic designer based in Eket, Akwa Ibom State.  
+With over 2 years experience, I deliver bold creative designs and high-quality print production.</p>
+<br>
+<p><strong>Working Days:</strong> Monday – Friday</p>
+<p><strong>Working Hours:</strong> 9:00AM – 6:00PM</p>
+</section>
+
+<section class="section" id="gallery">
+<h2>Recent Projects</h2>
+<div class="gallery">
+<img src="images/flyer-design.jpg" alt="Flyer Design">
+<img src="images/logo-branding.jpg" alt="Logo Branding Project">
+<img src="images/poster-design.jpg" alt="Poster Design">
+<img src="images/business-card.jpg" alt="Business Card Design">
+</div>
+</section>
+ 
+<section class="section" id="testimonials">
+<h2>What Clients Say</h2>
+<div class="testimonials">
+
+<div class="testimonial">
+<p>"Very professional and delivers clean designs on time. Highly recommended!"</p>
+<strong>— Local Business Owner</strong>
+</div>
+
+<div class="testimonial">
+<p>"The print quality and branding concept exceeded expectations."</p>
+<strong>— Startup Founder</strong>
+</div>
+
+<div class="testimonial">
+<p>"Creative, fast and reliable. Will definitely work again."</p>
+<strong>— Event Organizer</strong>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="contact">
+<h2>Let's Work Together</h2>
+<p>WhatsApp: 08089649108</p>
+<p>Eket, Akwa Ibom State, Nigeria</p>
+</section>
+
+<footer>
+© 2026 Gideon Marshal Sunday | Creative Design Studio
+</footer>
+
+<a href="https://wa.me/2348089649108" class="whatsapp" target="_blank">WhatsApp</a>
+
+<script>
+const texts = ["Graphic Designer","Brand Identity Specialist","Print Production Expert"];
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+if(count === texts.length){count = 0;}
+currentText = texts[count];
+letter = currentText.slice(0, ++index);
+document.getElementById("typing").textContent = letter;
+if(letter.length === currentText.length){
+setTimeout(()=>{index=0;count++;},1500);
+}
+setTimeout(type,100);
+})();
+</script>
+
+</body>
+</html>
